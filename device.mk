@@ -21,6 +21,9 @@ $(call inherit-product-if-exists, vendor/yu/tomato/tomato-vendor.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+PRODUCTY_COPY_FILES += \
+    device/yu/tomato/twrp.fstab:recovery/root/etc/twrp.fstab
+
 # Permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -55,7 +58,7 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
-$(call inherit-product, frameworks/native/build/phone-hdpi-2048-dalvik-heap.mk)
+#$(call inherit-product, frameworks/native/build/phone-hdpi-2048-dalvik-heap.mk)
 
 # Audio
 PRODUCT_PACKAGES += \
